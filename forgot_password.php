@@ -12,48 +12,45 @@
 <body style="background-color:#f2f2f2 ">
   <div class="container-fluid text-center">
      <div class="text-center">
-  	<h4>Set your password.</h4>
+  	<h4 >Set your password.</h4>
 	  </div>
-	  <form method="post" action="?">
+	        
+	  <form method="post" action="forgot_password1.php" autocomplete="off">
         <div class="form-group row">
-	    	<div class="col-sm-2">
-	    	<label>Email:</label>
-	    	</div>
-	    	  <div class="col-sm-6">
-	    	<input type="Email" name="email" placeholder="Example@email.com" style="border:2px solid lightblue; border-radius: 6px;" required/>
+	    	<label class="col-sm-2">Email:</label>
+	    	  <div>
+	    	<input class="col-sm-3" type="Email" name="email" placeholder="Example@email.com" style="border:2px solid lightblue; border-radius: 6px;" required/>
 		      </div>
 		</div>
 
 		<div class="form-group row">
-			    <div class="col-sm-2">
-		     <label>Set Password:</label>
-		        </div>
-		         <div class="col-sm-6">
-		     <input type="password" name="fp1" style="border:2px solid lightblue; border-radius: 6px;" required/>
+		     <label class="col-sm-2">Set Password:</label>
+		       
+		         <div>
+		     <input class="col-sm-3" type="password" name="fp1" style="border:2px solid lightblue; border-radius: 6px;" required/>
 		         </div>
 		</div>
 
 		<div class="form-group row">
-			    <div class="col-sm-2">
-		           <label>Confirm Password:</label>
-		        </div>
-		        <div class="col-sm-6">
-		            <input type="password" name="fp1" style="border:2px solid lightblue; border-radius: 6px;" required/>
+			    
+		           <label class="col-sm-2">Confirm Password:</label>
+		        
+		        <div >
+		            <input  class="col-sm-3" type="password" name="fp2" style="border:2px solid lightblue; border-radius: 6px;" required/>
 		         </div>
 		
 		</div>
 
-		<div class="col-sm-6">
-			<input class="btn btn-primary btn-sm" type="submit" name="set" value="Set" style="border-radius:10px; width:100px; height:40px;"/>
+		<div class="col-sm-3">
+			<input class="btn btn-primary btn-sm" type="submit" name="set" value="Set" style="border-radius:10px; width:90px; height:30px;"/>
+
+			<a href="user_login.php"><button style="border-radius:8px;"  type="button" class="btn btn-info btn-sm" > Go back !</button></a>
 		</div>
+		
 	</form>
-	 
+
   </div>
 
-  <?php
-$db=mysqli_connect("localhost","root","","ragistration");
-
-
-  ?>
+  <h5 align="center" style="color:#4ddbff; margin-top:270px;"><span class="glyphicon glyphicon-font"></span> &nbsp;Copyright©2020 - Sandeep</h5> 
 </body>
 </html>

@@ -10,33 +10,75 @@ $email= $_POST['email'];
 $cno= $_POST['cno'];
 $country= $_POST['country'];
 $pass1= $_POST['pass1'];
-$pass1= $_POST['pass2'];
+$pass2= $_POST['pass2'];
 
+ $files=$_FILES['upload-img'];
+  $filename=$files['name'];
+  $fileerror=$files['error'];
+  $filetmp=$files['tmp_name'];
+  $fileext=explode('.', $filename);
+ $filecheck=strtolower(end($fileext));
+ $fileextstored = array('png','jpg','jpeg');
+ if(in_array($filecheck, $fileextstored))
+ {
+  $destinationfile='userprofile/'.$filename;
+  move_uploaded_file($filetmp, $destinationfile);
+ }
+
+
+
+
+$create_date= date('Y-m-d');//take automatic date form system when user egister him self
    if($_POST['pass1']!=$_POST['pass2'])
    {
     
+    ?>
+      <script>
+  alert("Password missmatch");
+ window.location='index.php';
+  
+</script>
+    <?php
     // exit("<h3 style='color:red;'>Password mismatch please re-enter...</h3>");
-    echo "Mismatch password.";
-     header('Location:index.php');
+    // echo "Mismatch password.";
+    //  header('Location:index.php');
+    //  exit();
 
    }
+   else
+   {
 
 
 $create_date= date('y-m-d');
 
- $q = "INSERT INTO rag(first_name, last_name,dob,email,contact_no,country,password,creation_date) 
-	VALUES ('$f_name','$l_name','$dob','$email','$cno','$country','$pass1','$create_date')";
- $data=mysqli_query($db,$q);
+
+ $q = "INSERT INTO rag(first_name, last_name,dob,email,contact_no,country,password,image,creation_date) 
+	VALUES ('$f_name','$l_name','$dob','$email','$cno','$country','$pass1','$destinationfile','$create_date')";
+ $data=mysqli_query($db,$q);  //exicute the query......
    if($data)
        {
-    	echo "saved!";
-    }
+        ?>
+               <script>
+         alert("'your data is saved ");
+       window.open('index.php','_self');
+       </script>
+       <?php
+ }
     else
     {
-    	echo "failed!";
+?>
+           <script>
+         alert("Technical error!");
+       window.open('index.php','_self');
+       </script>
+
+<?php
+
     }
 }
+}
 mysqli_close($db);
+ exit();
 
 ?>
 
@@ -51,7 +93,7 @@ mysqli_close($db);
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: #f5f5f0">
-	<h2 align="center`" style="color:lightblue;">Your info--</h2>
+
  <table border="2px solid black;" style="background-color: lightblue;" align="center">
  	<tr>
  		<th>First Name</th>
@@ -61,6 +103,7 @@ mysqli_close($db);
         <th>contact no.</th>
         <th>Country</th>
         <th>Password</th>
+        <th>Img</th>
 </tr>
 <tr>
    <td> <?php echo $f_name ?></td>
@@ -70,11 +113,13 @@ mysqli_close($db);
    <td><?php echo $cno ?></td>
    <td><?php echo $country ?></td>
    <td><?php echo $pass1 ?></td>
+    <td><?php echo $imgs ?></td>
 
 
 	</tr>
 
  </table> <br>
+
 <a href="index.php"><button type="button" class="btn btn-info">Go back !</button></a>
 
 

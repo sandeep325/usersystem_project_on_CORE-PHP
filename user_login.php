@@ -7,15 +7,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
       
 </head>
 <body style="background-color:#f2f2f2 ">
 
- <div  class="container" style="margin-left:400px;"> 
+ <div  class="container text-center" > 
            
              <div class="form-group row">
                 <div class="col-sm-6">
-            <h3 align="center" style="color:#4ddbff;">User Login</h3> <br>
+                  <h4 align="center" style="color:#3333ff;"> WELLCOME! TO <b style="text-shadow: 6px 2px 3px lightblue; text-red">USERSYSTEM</b></h4>
+            <h3 align="center" style="color:#4ddbff;">User Login</h3> 
                  </div>
             </div>  
           <div class="form-group row ">
@@ -24,7 +26,7 @@
                   
                </div>
           </div>
-     <form method="post" action="user_login1.php"   align="center">
+     <form method="post" action="user_login1.php" autocomplete="off"  align="center">
 
 	<div  class="form-group row">
 	        <label  class="col-sm-2">Email:</label>
@@ -36,24 +38,26 @@
      <div class="form-group row">
             <label  class="col-sm-2 invalid">Password:</label>
            <div>
-           <input style="border:2px solid lightblue; border-radius: 4px;"  class="col-sm-3" type="Password" name="pass" required />
+                    <input style="border:2px solid lightblue; border-radius: 4px;"  class="col-sm-3" type="Password" name="pass" required />
+
              </div>
        </div>
               <div class="form-group row">   
                 <div class="col-sm-6">
-                <input  class="btn btn-success" type="submit" name="submit" value="submit" style="border-radius:15px">
+                <input  class="btn btn-info btn-sm" type="submit" name="login" value="login" style="border-radius:8px; width:60px;">
               
-      <input class="btn btn-danger" type="reset" name="rs" value="reset" style="border-radius:15px; margin-left:10px;"/>
+      <input class="btn btn-danger btn-sm" type="reset" name="rs" value="reset" style="border-radius:8px; margin-left:12px;  width:60px;"/>
                  </div>
                  </div>
                  <div class="form-group row">
-                     <div class="col-sm-6">
-                 <h4><a href="forgot_password.php">Forgot password ?</a></h4>
-                     </div>
+                  <div class="col-sm-6">
+        <h5><a href="forgot_password.php">Forgot password ?</a></h5>
+          <h5><a href="index.php"> | signup |</a></h5>           
+                 </div>
                  </div>
          </form>
-
-<a href="index.php"><button style="border-radius:35px;"  type="button" class="btn btn-info" >Go back !</button></a> 
+   
+       </div>
 </div>
 </body>
 </html>
