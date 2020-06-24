@@ -12,52 +12,58 @@
 </head>
 <body style="background-color:#f2f2f2 ">
 
- <div  class="container text-center" > 
-           
-             <div class="form-group row">
-                <div class="col-sm-6">
-                  <h4 align="center" style="color:#3333ff;"> WELLCOME! TO <b style="text-shadow: 6px 2px 3px lightblue; text-red">USERSYSTEM</b></h4>
-            <h3 align="center" style="color:#4ddbff;">User Login</h3> 
-                 </div>
-            </div>  
-          <div class="form-group row ">
-               <div class="col-sm-6 text-center">
-                 <img src="logo.jpg" alt="Logo" class="img-circle col-4 mx-auto text-center" align="center"/>  
-                  
-               </div>
-          </div>
-     <form method="post" action="user_login1.php" autocomplete="off"  align="center">
+        <div class="container">
+<fieldset>
 
-	<div  class="form-group row">
-	        <label  class="col-sm-2">Email:</label>
-            <div> 
-   	        <input style="border:2px solid lightblue; border-radius: 4px;" class="col-sm-3" type="email" name="email" required/>
-   	        </div>
+<!-- Form Name -->
+<legend><center><h3><b style="text-shadow:1px 1px 0 #444" class="label label-primary">WELLCOME TO USERSYSTEM</b></h3></center></legend>
+<center><img src="logo.jpg" alt="Logo" class="img-circle col-4 mx-auto text-center" />  
+                   </center></legend><br>
+
+ 
+<!-- Text input-->
+<form class="well form-horizontal" method="post" action="user_login1.php" autocomplete="off" submit="true"  enctype="multipart/form-data">
+
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail :</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="email" required="true" >
     </div>
-
-     <div class="form-group row">
-            <label  class="col-sm-2 invalid">Password:</label>
-           <div>
-                    <input style="border:2px solid lightblue; border-radius: 4px;"  class="col-sm-3" type="Password" name="pass" required />
-
-             </div>
-       </div>
-              <div class="form-group row">   
-                <div class="col-sm-6">
-                <input  class="btn btn-info btn-sm" type="submit" name="login" value="login" style="border-radius:8px; width:60px;">
-              
-      <input class="btn btn-danger btn-sm" type="reset" name="rs" value="reset" style="border-radius:8px; margin-left:12px;  width:60px;"/>
-                 </div>
-                 </div>
-                 <div class="form-group row">
-                  <div class="col-sm-6">
-        <h5><a href="forgot_password.php">Forgot password ?</a></h5>
-          <h5><a href="index.php"> | signup |</a></h5>           
-                 </div>
-                 </div>
-         </form>
-   
-       </div>
+  </div>
 </div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password :</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="pass"   placeholder="Password" class="form-control"  type="password" required>
+    </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group text-center">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp<button type="submit" type="submit" name="login" value="login" class="btn btn-info" >&nbsp&nbsp&nbsp&nbsp&nbspLogin &nbsp&nbsp&nbsp</button>
+  </div>
+</div>
+
+</fieldset>
+
+</form>
+</div> 
+</div>
+<center>
+<h5><a href="forgot_password.php">Forgot password ?</a></h5>
+  <h5><a href="index.php"> | signup |</a></h5>  
+  <h5  style="color:#4ddbff;"  data-toggle="popover" title="All Copyright reserved."><span class="glyphicon glyphicon-font"></span> &nbsp;Copyright©2020 - Sandeep</h5> 
+</center>
+ </div>
+
+
 </body>
 </html>

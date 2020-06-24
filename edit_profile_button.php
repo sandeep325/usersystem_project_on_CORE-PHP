@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_SESSION['u_login_id']==true)
+{
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,62 +17,96 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color:#f2f2f2 ">
-  <div class="container-fluid text-center">
-     <div class="text-center">
-  	<h4 >Edit  Your profile</h4>
-	  </div>
-	        
-	  <form method="post" action="?" autocomplete="off">
-        <div class="form-group row">
-	    	<label class="col-sm-2">Email:<sup style="color: red; font-size:8px;">(You can not change email)</sup> </label>
-	    	  <div>
-	    	<input class="col-sm-3" type="Email" name="edit_email" value="<?php echo $_SESSION['user_sess_email']?>" style="border:2px solid lightblue; border-radius: 6px;" readonly/>
-		      </div>
-		</div>
 
-		<div class="form-group row">
-		     <label class="col-sm-2">First Name:</label>
-		       
-		         <div>
-		     <input class="col-sm-3" type="text" name="edit_fn" value="<?php echo $_SESSION["user_sess_name"]?>" style="border:2px solid lightblue; border-radius: 6px;" required/>
-		         </div>
-		</div>
-		<div class="form-group row">
-		     <label class="col-sm-2">Last Name:</label>
-		       
-		         <div>
-		     <input class="col-sm-3" type="text" name="edit_ln" value="<?php echo $_SESSION["user_last_name"]?>" style="border:2px solid lightblue; border-radius: 6px;" required/>
-		         </div>
-		</div>
+ <div class="container">
+<fieldset>
 
-		<div class="form-group row">
-			    
-		           <label class="col-sm-2">Date of Birth:</label>
-		        
-		        <div >
-		            <input  class="col-sm-3" type="date" name="edit_dob" value="<?php echo $_SESSION["user_sess_dob"]?>" style="border:2px solid lightblue; border-radius: 6px;" required/>
-		         </div>
-		
-		</div>
-       <div class="form-group row">
-		     <label class="col-sm-2">Contact No:</label>
-		       
-		         <div>
-		     <input class="col-sm-3" type="text" name="edit_cn" value="<?php echo $_SESSION['u_cn']?>" style="border:2px solid lightblue; border-radius: 6px;" required/>
-		         </div>
-		</div>
-		<div class="col-sm-3">
-			<input class="btn btn-primary btn-sm" type="submit" name="update" value="Update" style="border-radius:10px; width:70px; height:30px;"/> &nbsp;
+<!-- Form Name -->
+<legend><center><h3><b style="text-shadow:1px 1px 0 #444; text-transform: capitalize;" class="label label-default"><?php echo $_SESSION["user_sess_name"];?></b></h3></center></legend>
+<center>  <h4 >Edit  Your profile</h4>
+                   </center></legend><br>
 
-			<a href="userprofile.php"><button style="border-radius:8px; width:70;"  type="button" class="btn btn-info btn-sm" > Go back !</button></a>
-		</div>
-		
-	</form>
+ 
+<!-- Text input-->
+<form class="well form-horizontal" method="post" action="?" autocomplete="off" submit="true"  enctype="multipart/form-data">
 
+<!--email -->
+ <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail :<sup style="color: red; font-size:8px;">(You can not change email)</sup></label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="edit_email" value="<?php echo $_SESSION['user_sess_email']?>"  class="form-control"  type="email"   data-toggle="popover" title="Email can't be change" readonly="true">
+    </div>
   </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >First Name:</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="edit_fn" value="<?php echo $_SESSION["user_sess_name"]?>"  class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+      
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name:</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="edit_ln" value="<?php echo $_SESSION["user_last_name"]?>"  class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
 
-  <h5 align="center" style="color:#4ddbff; margin-top:210px;"><span class="glyphicon glyphicon-font"></span> &nbsp;Copyright©2020 - Sandeep</h5> 
-</body>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Date of Birth:</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+  <input name="edit_dob" value="<?php echo $_SESSION["user_sess_dob"]?>"    class="form-control"  type="date" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Contact No:</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="edit_cn" value="<?php echo $_SESSION['u_cn']?>"    class="form-control"  type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  maxlength="11" required>
+    </div>
+  </div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group text-center">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+  	<a href="userprofile.php"> <button type="button"   value="Go back !" class="btn btn-warning" ><span class="	glyphicon glyphicon-arrow-left"></span>&nbsp;Go back</button></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp&nbsp&nbsp<button type="submit"  name="update" value="Update" class="btn btn-primary" >&nbsp&nbsp&nbsp&nbsp&nbspUpdate &nbsp&nbsp&nbsp</button>  
+   
+  </div>
+</div>
+
+</fieldset>
+
+</form>
+</div> 
+</div>
+<center>
+   <h5  style="color:#4ddbff;"  data-toggle="popover" title="All Copyright reserved."><span class="glyphicon glyphicon-font"></span> &nbsp;Copyright©2020 - Sandeep</h5> 
+</center>
+ </div>
+
+
+
 </html>
 		   
 <?php
@@ -115,5 +152,9 @@ else
 }
 
 mysqli_close($db);
+} //End of check if sess  id
+else{
+	echo header('location:user_login.php');
+} //End of else part check if sess  id
 ?>
 

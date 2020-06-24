@@ -11,6 +11,7 @@ $cno= $_POST['cno'];
 $country= $_POST['country'];
 $pass1= $_POST['pass1'];
 $pass2= $_POST['pass2'];
+$user_gender=$_POST['user_gender']; //gender
 
  $files=$_FILES['upload-img'];
   $filename=$files['name'];
@@ -52,8 +53,8 @@ $create_date= date('Y-m-d');//take automatic date form system when user egister 
 $create_date= date('y-m-d');
 
 
- $q = "INSERT INTO rag(first_name, last_name,dob,email,contact_no,country,password,image,creation_date) 
-	VALUES ('$f_name','$l_name','$dob','$email','$cno','$country','$pass1','$destinationfile','$create_date')";
+ $q = "INSERT INTO rag(first_name, last_name,dob,gender,email,contact_no,country,password,image,creation_date) 
+	VALUES ('$f_name','$l_name','$dob','$user_gender','$email','$cno','$country','$pass1','$destinationfile','$create_date')";
  $data=mysqli_query($db,$q);  //exicute the query......
    if($data)
        {
@@ -77,13 +78,18 @@ $create_date= date('y-m-d');
     }
 }
 }
+
+else
+{
+  
+}
 mysqli_close($db);
  exit();
 
 ?>
 
 
-<html>
+<!-- <html>
 <head>
   <title>User info</title>
    <meta charset="utf-8">
@@ -124,4 +130,4 @@ mysqli_close($db);
 
 
 </body>
-</html>
+</html> -->

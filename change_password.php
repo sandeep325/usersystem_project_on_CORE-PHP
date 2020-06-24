@@ -1,5 +1,7 @@
 <?php
 session_start();
+if($_SESSION['u_login_id']==true)
+{
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,52 +18,74 @@ session_start();
 
 <body style="background-color:#f2f2f2 ">
 
-  <div class="container-fluid text-center">
-     <div class="text-center">
-  	<h4 >Change password</h4>
-  
-	  </div>
-	        
-	  <form method="post" action="?" autocomplete="off">
-        
 
-		<div class="form-group row">
-		     <label class="col-sm-2">Current password:</label>
-		       
-		         <div>
-		     <input class="col-sm-3" type="password" name="pp" style="border:2px solid lightblue; border-radius: 6px;" required/>
-		         </div>
-		</div>
+	 <div class="container">
+    <!-- <form class="well form-horizontal" action=" " method="post"  id="contact_form"> -->
+<fieldset>
 
-		<div class="form-group row">
-			    
-		           <label class="col-sm-2"> Set new password:</label>
-		        
-		        <div >
-		            <input  class="col-sm-3" type="password" name="new_pass" style="border:2px solid lightblue; border-radius: 6px;" required/>
-		         </div>
-		     </div>
-		         <div class="form-group row">
-			    
-		           <label class="col-sm-2"> Confirm new password:</label>
-		        
-		        <div >
-		            <input  class="col-sm-3" type="password" name="con_pass" style="border:2px solid lightblue; border-radius: 6px;" required/>
-		         </div>
-		
-		</div>
+<!-- Form Name -->
+<legend><center><h3><b style="text-shadow:1px 1px 0 #444; text-transform: capitalize;" class="label label-default"><?php echo $_SESSION["user_sess_name"];?></b></h3></center></legend>
+<center>  <h4 >Change password</h4>
+                   </center></legend><br>
 
-		<div class="col-sm-3">
-			<input class="btn btn-primary btn-sm" type="submit" name="update_pass" value="Update" style="border-radius:10px; width:90px; height:30px;"/>
+ 
+<!-- Text input-->
+<form class="well form-horizontal" method="post" action="?"  autocomplete="off" submit="true"  enctype="multipart/form-data">
 
-			<a href="userprofile.php"><button style="border-radius:8px;"  type="button" class="btn btn-info btn-sm" > Go back !</button></a>
-		</div>
-		
-	</form>
-
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Current password:</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="pp"   placeholder="Password" class="form-control"  type="password" required>
+    </div>
   </div>
+</div>
+      
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Set new password:</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="new_pass"   placeholder="Password" class="form-control"  type="password" required>
+    </div>
+  </div>
+</div>
 
-  <h5 align="center" style="color:#4ddbff; margin-top:270px;"><span class="glyphicon glyphicon-font"></span> &nbsp;Copyright©2020 - Sandeep</h5> 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" >Confirm new password:</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input name="con_pass"   placeholder="Password" class="form-control"  type="password" required>
+    </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group text-center">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+  	<a href="userprofile.php"> <button type="button"   value="Go back !" class="btn btn-warning" ><span class="	glyphicon glyphicon-arrow-left"></span>&nbsp;Go back</button></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp&nbsp&nbsp<button type="submit"  name="update_pass" value="Update" class="btn btn-primary" >&nbsp&nbsp&nbsp&nbsp&nbspSave &nbsp&nbsp&nbsp</button>  
+   
+  </div>
+</div>
+
+</fieldset>
+
+</form>
+</div> 
+</div>
+<center>
+   <h5  style="color:#4ddbff;"  data-toggle="popover" title="All Copyright reserved."><span class="glyphicon glyphicon-font"></span> &nbsp;Copyright©2020 - Sandeep</h5> 
+</center>
+ </div>
+
+ 
 </body>
 </html>
 
@@ -132,4 +156,11 @@ if ($u_pass!=$pp)
 
 }
 }
+
+} //End of check if sess  id
+else
+{
+  echo header('location:user_login.php');
+  
+} //End of else part check if sess  id
 ?>
