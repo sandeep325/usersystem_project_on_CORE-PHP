@@ -270,7 +270,7 @@ $email=$_SESSION["user_sess_email"];  //login email throu acsess userprofile
     <tr>
       <td style="padding:1px 1px 1px 1px;">
           <form action="friends-profile.php " method="post">
-          <button type="submit" name="frd-profile-btn" value="<?php echo $row['id'];?>" id="frd-profile-btn">
+          <button type="submit" name="frd-profile-btn" value="<?php echo trim($row['id']);?>" id="frd-profile-btn">
             <?php echo $row['first_name']."&nbsp;".$row['last_name'];?>&nbsp;<td><span class="glyphicon glyphicon-user"></span></td>
             </button> </form>
         </td>

@@ -101,7 +101,12 @@ $email=$_SESSION["user_sess_email"];  //login email throu acsess userprofile
     <td><a href="friends-list.php">Social friends &nbsp;&nbsp;<span class="glyphicon glyphicon-user"></span></a></td>
         </tr>
         <tr>
-     <td><a href="#">Massages &nbsp;&nbsp;<span class="glyphicon glyphicon-envelope"></span></a></td>
+     <td><a href="#">Massages &nbsp;&nbsp;<span class="glyphicon glyphicon-envelope"></span></a><sup style="
+Border-radius:50%;"class="label label-danger">2</sup></td>
+     </tr>
+     <tr>
+     <td><a href="#">Notifications &nbsp;&nbsp;<span class="glyphicon glyphicon-bell"></span></a><sup style="
+Border-radius:50%;"class="label label-danger">7</sup></td>
      </tr>
       <tr>
      <td><a href="#">Post's &nbsp;&nbsp;<span class="glyphicon glyphicon-globe "></span></a></td>

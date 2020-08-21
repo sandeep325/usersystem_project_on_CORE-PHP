@@ -242,9 +242,11 @@ div.desc {
          </tr>
    </table><!--end table where discription-->
       <?php
+     // echo $row['id']; 
 } //end while loop
 }//end if condition if buttn click
 ?>
+
     <hr class="hrline">
       <div class="mydiv"><table> <!--table for matual frds and photos,post's btn-->
         <tr>
